@@ -2,15 +2,18 @@ require "test_helper"
 
 feature "Deleting a Post" do
   scenario "post is deleted with a click" do
+
     # Given an existing post
-    Post.create(title: "Becoming a Code Fellow", body: "Means striving for excellence.")
     visit posts_path
+    title = posts(:cr).title
 
     # When the delete link is clicked
-    page.find(".destroy").click_on "Destroy"
+    page.find("[href='/posts/#{posts(:cr).id}'] [data-method]").click
 
     # Then the post is deleted
-    page.wont_have_content "Becoming a Code Fellow"
+    page.wont_have_content posts(:cr).body
+    page.wont_have_content title
+
   end
 end
 
