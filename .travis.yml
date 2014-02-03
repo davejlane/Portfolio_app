@@ -1,5 +1,11 @@
 language: ruby
 rvm:
   - "2.0.0"
+
+
+deploy:
+  provider: heroku
+  app: dlane-portfolio # optional if it's the same as your repo name
+  api_key: "cwjcXqoV2TruYS6PnbAN"
 # uncomment this line if your project needs to run something other than `rake`:
 # script: bundle exec rspec spec
