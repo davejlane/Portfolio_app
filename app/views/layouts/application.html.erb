@@ -6,7 +6,7 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "Dave Lane - Portfolio" %></title>
 
-    <link href='http://fonts.googleapis.com/css?family=Monoton|Bangers|Audiowide|Allerta+Stencil|Press+Start+2P' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700|Oswald:400,700|Patua+One' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
@@ -14,32 +14,15 @@
 
   <body>
 
-    <nav class="top-bar hide-for-small" data-topbar="">
-      <ul class="title-area">
+    <nav class="top-bar" data-topbar="">
+      <ul class="title-area row">
         <li class="name">
           <h1 class='logo'><a href="/">Dave Lane - Web Developer</a></h1>
         </li>
       </ul>
-
-
-      <section class="top-bar-section">
-        <ul class="right">
-          <li class="">
-            <a href="/posts" class="">Blog</a>
-          </li>
-          <li class="divider"></li>
-          <li class="">
-            <a href="/" class="">Home</a>
-          </li>
-        </ul>
-      </section>
     </nav>
-    <div class="row">
-      <div class="large-8 columns"><%= yield %></div>
-      <div class="large-4 columns">
-        <h2>About Us</h2>
-        <p>whatevs</p>
-      </div>
+    <div class="row main">
+      <div class="small-12 columns"><%= yield %></div>
     </div>
 
     <%= javascript_include_tag "application" %>

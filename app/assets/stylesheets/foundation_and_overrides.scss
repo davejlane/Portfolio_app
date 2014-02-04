@@ -35,7 +35,8 @@
 // $total-columns: 12;
 
 // We use these to control various global styles
-// $body-bg: #fff;
+// $body-bg: rgba(224, 227, 181, 0.5);
+$body-bg: #f9f9f9;
 // $body-font-color: #222;
 // $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
@@ -1012,8 +1013,8 @@
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: #333;
-// $topbar-bg: $topbar-bg-color;
+$topbar-bg-color: #8c9368;
+$topbar-bg: $topbar-bg-color;
 
 // Height and margin
 // $topbar-height: 45px;
@@ -1190,44 +1191,80 @@
 
 // Behold, here are all the Foundation components.
 
-.logo {
-  font-family:'Audiowide','Allerta Stencil', 'Press Start 2P';
 
-}
 
 @import
-  "foundation/components/accordion",
-  "foundation/components/alert-boxes",
-  "foundation/components/block-grid",
-  "foundation/components/breadcrumbs",
-  "foundation/components/button-groups",
   "foundation/components/buttons",
+  "foundation/components/button-groups",
   "foundation/components/clearing",
-  "foundation/components/dropdown",
-  "foundation/components/dropdown-buttons",
-  "foundation/components/flex-video",
   "foundation/components/forms",
   "foundation/components/grid",
   "foundation/components/inline-lists",
-  "foundation/components/joyride",
-  "foundation/components/keystrokes",
   "foundation/components/labels",
-  "foundation/components/magellan",
-  "foundation/components/orbit",
-  "foundation/components/pagination",
   "foundation/components/panels",
-  "foundation/components/pricing-tables",
-  "foundation/components/progress-bars",
-  "foundation/components/reveal",
-  "foundation/components/side-nav",
-  "foundation/components/split-buttons",
-  "foundation/components/sub-nav",
-  "foundation/components/switch",
-  "foundation/components/tables",
-  "foundation/components/tabs",
   "foundation/components/thumbs",
-  "foundation/components/tooltips",
   "foundation/components/top-bar",
   "foundation/components/type",
-  "foundation/components/offcanvas",
   "foundation/components/visibility";
+
+h1, h2, h3, .logo {
+  font-family:'Patua One', serif;
+}
+
+.logo {
+  a:hover {
+    background: #717754;
+  }
+}
+
+
+.main {
+  margin-top: 1em;
+}
+
+.left.th {
+  margin-right: 1em;
+}
+
+.button {
+  background-color: #7785A8;
+
+  &:hover, &:active {
+    background-color: #2F3D58;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .pic-copy {
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .top-bar .title-area {
+    width:1000px;
+    margin: 0 auto;
+    float: none;
+
+    h1 {
+      display: inline-block;
+    }
+  }
+}
+
+
+.post {
+  margin-bottom: 1em;
+  border-bottom: 1px solid #ccc;
+}
+
+.post-title {
+  background: rgba(140, 147, 104,0.1);
+  padding: 0.2em;
+  margin-bottom: 1em;
+}
+.post-body {
+  margin-bottom: 1em;
+}
+
+

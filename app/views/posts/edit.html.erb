@@ -2,5 +2,7 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
+<ul class="button-group round">
+  <li><%= link_to 'Show', @post, class: 'button tiny secondary' %> </li>
+  <li><%= link_to 'Back', posts_path, class: 'button tiny secondary' %> </li>
+</ul>
