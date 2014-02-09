@@ -1194,6 +1194,7 @@ $topbar-bg: $topbar-bg-color;
 
 
 @import
+  "foundation/components/alert-boxes",
   "foundation/components/buttons",
   "foundation/components/button-groups",
   "foundation/components/clearing",
@@ -1255,13 +1256,16 @@ h1, h2, h3, .logo {
 
 .post {
   margin-bottom: 1em;
-  border-bottom: 1px solid #ccc;
+  border: 1px solid #EEE;
+  background: #FFF;
+  padding: 0.5em 0.5em 0;
 }
 
 .post-title {
   background: rgba(140, 147, 104,0.1);
   padding: 0.2em;
   margin-bottom: 1em;
+  font-weight: 400;
 }
 .post-body {
   margin-bottom: 1em;

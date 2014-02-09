@@ -3,6 +3,8 @@ PortfolioApp::Application.routes.draw do
 
   root :to => "home#index"
 
+  resources :projects
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

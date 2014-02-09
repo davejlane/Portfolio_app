@@ -13,7 +13,6 @@
   </head>
 
   <body>
-
     <nav class="top-bar" data-topbar="">
       <ul class="title-area row">
         <li class="name">
@@ -22,7 +21,15 @@
       </ul>
     </nav>
     <div class="row main">
-      <div class="small-12 columns"><%= yield %></div>
+      <div class="small-12 columns">
+        <% flash.each do |key, value| %>
+          <div class="alert-box round <%= flash_class(key) %>">
+                <%= value %>
+          </div>
+        <% end %>
+
+        <%= yield %>
+      </div>
     </div>
 
     <%= javascript_include_tag "application" %>
