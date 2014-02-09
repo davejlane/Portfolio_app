@@ -1,4 +1,8 @@
-cr:
-  name: "Code Fellows Portfolio"
-  technologies_used: "Rails, Ruby, Bootstrap, HTML5, CSS3"
+portfolio:
+  name: How meta
+  technologies_used: Ruby, Rails, Zurb
+
+freelance:
+  name: Barnyard Cereal
+  technologies_used: Ruby, Rails, Farmville API, Automilker
 
