@@ -3,7 +3,7 @@ require "test_helper"
 feature "As the site visitor, I want to see a developer's portfolio" do
   scenario "viewing all projects" do
 
-    # Given a a couple of projects (loaded from fixtures)
+    # Given a couple of projects (loaded from fixtures)
     visit projects_path
     click_on "New Project"
     fill_in "Name", with: projects(:portfolio).name

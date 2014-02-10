@@ -13,6 +13,7 @@ feature "As the site owner, I want to add a portfolio item so that I can show of
   end
 
   scenario "new project has invalid data" do
+
     # Given invalid project data is entered in a form
     visit new_project_path
     fill_in "Name", with: "Q"
