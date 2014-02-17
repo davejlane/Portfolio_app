@@ -15,11 +15,23 @@
   <body>
     <nav class="top-bar" data-topbar="">
       <ul class="title-area row">
-        <li class="name">
+        <li class="name left">
           <h1 class='logo'><a href="/">Dave Lane - Web Developer</a></h1>
         </li>
+        <li class="right">
+        <% if !current_user.present? %>
+          <%= link_to "Sign Up", new_user_registration_path %>
+          <%= link_to "Sign In", new_user_session_path %>
+        <% else %>
+          <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+        <% end %>
+        </li>
       </ul>
-      <%= link_to "Sign Up", new_user_registration_path %>
+      <div class="right">
+        <ul>
+
+        </ul>
+      </div>
     </nav>
     <div class="row main">
       <div class="small-12 columns">
@@ -27,8 +39,6 @@
           <div class="alert-box  <%= flash_class(key) %>">
                 <%= value %>
           </div>
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
         <% end %>
         <%= yield %>
       </div>

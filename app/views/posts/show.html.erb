@@ -1,10 +1,13 @@
-<p id="notice"><%= notice %></p>
-
 <article class="post">
   <h4 class="post-title"><%= @post.title %></h4>
   <div class="post-body">
     <%= @post.body %>
   </div>
+  <p id="author">
+    <b>By:</b>
+    <%= @post.author.email %>
+  </p>
+
 </article>
 
 <ul class="button-group round">

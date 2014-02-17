@@ -11,6 +11,13 @@ require "minitest/rails/capybara"
 # Uncomment for awesome colorful output
 # require "minitest/pride"
 
+def sign_in
+  visit new_user_session_path
+  fill_in "Email", with: users(:one).email
+  fill_in "Password", with: "password"
+  click_on "Sign in"
+end
+
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
   fixtures :all
