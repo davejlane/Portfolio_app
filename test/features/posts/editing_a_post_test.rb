@@ -6,8 +6,7 @@ feature "Editing a Post" do
     sign_in
 
     # Given an existing post
-    post = Post.create(title: "Becoming a Code Fellow", body: "Means striving for excellence.")
-    visit post_path(post)
+    visit post_path(posts(:cf))
 
     # When I click edit and submit changed data
     click_on "Edit"
