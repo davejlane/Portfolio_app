@@ -13,22 +13,31 @@
 </table>
 
 <section class="posts">
-  <% @posts.each do |post| %>
-    <article class="post">
-      <h4 class="post-title"><%= post.title %></h4>
-      <div class='post-body'>
-        <%= post.body %>
-      </div>
-      <ul class="button-group round">
-        <li><%= link_to 'Show', post, class: 'button tiny secondary' %></li>
-        <% if policy(post).update? %>
-          <li><%= link_to 'Edit', edit_post_path(post), class: 'button tiny secondary' %> </li>
-        <% end %>
-        <% if policy(post).destroy? %>
-          <li><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy button tiny secondary' %></li>
-        <% end %>
-      </ul>
-    </article>
+
+  <% if current_user.present? %>
+    <% current_user.posts.each do |post| %>
+      <p><%= post.title %></p>
+    <% end %>
+
+  <% else %>
+
+    <% @posts.each do |post| %>
+      <article class="post">
+        <h4 class="post-title"><%= post.title %></h4>
+        <div class='post-body'>
+          <%= post.body %>
+        </div>
+        <ul class="button-group round">
+          <li><%= link_to 'Show', post, class: 'button tiny secondary' %></li>
+          <% if policy(post).update? %>
+            <li><%= link_to 'Edit', edit_post_path(post), class: 'button tiny secondary' %> </li>
+          <% end %>
+          <% if policy(post).destroy? %>
+            <li><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy button tiny secondary' %></li>
+          <% end %>
+        </ul>
+      </article>
+    <% end %>
   <% end %>
 </section>
 
