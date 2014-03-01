@@ -11,9 +11,9 @@ require "minitest/rails/capybara"
 # Uncomment for awesome colorful output
 # require "minitest/pride"
 
-def sign_in
+def sign_in(role = :editor)
   visit new_user_session_path
-  fill_in "Email", with: users(:one).email
+  fill_in "Email", with: users(:editor).email
   fill_in "Password", with: "password"
   click_on "Sign in"
 end

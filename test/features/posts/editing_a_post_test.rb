@@ -3,7 +3,7 @@ require "test_helper"
 feature "Editing a Post" do
   scenario "submit updates to an existing post" do
 
-    sign_in
+    sign_in(:author)
 
     # Given an existing post
     visit post_path(posts(:cf))

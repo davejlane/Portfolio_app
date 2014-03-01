@@ -21,8 +21,12 @@
       </div>
       <ul class="button-group round">
         <li><%= link_to 'Show', post, class: 'button tiny secondary' %></li>
-        <li><%= link_to 'Edit', edit_post_path(post), class: 'button tiny secondary' %> </li>
-        <li><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy button tiny secondary' %></li>
+        <% if policy(post).update? %>
+          <li><%= link_to 'Edit', edit_post_path(post), class: 'button tiny secondary' %> </li>
+        <% end %>
+        <% if policy(post).destroy? %>
+          <li><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy button tiny secondary' %></li>
+        <% end %>
       </ul>
     </article>
   <% end %>

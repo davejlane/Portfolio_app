@@ -19,6 +19,12 @@
     <%= f.label :body %>
     <%= f.text_area :body %>
   </div>
+  <% if current_user.editor? %>
+    <div class="field">
+      <%= f.label :published, class: "inline", title: "Is this post published?", data: {tooltip: true } %><br>
+      <%= f.check_box :published %>
+    </div>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>

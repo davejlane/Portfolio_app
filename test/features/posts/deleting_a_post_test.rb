@@ -3,7 +3,7 @@ require "test_helper"
 feature "Deleting a Post" do
   scenario "post is deleted with a click" do
 
-    sign_in
+    sign_in(:author)
 
     # Given an existing post
     visit posts_path
